@@ -166,7 +166,7 @@ export function UserMenu() {
                             : 'text-forest-700/80 dark:text-sand-300/80 hover:bg-forest-50/60 dark:hover:bg-slate2-800/60'
                         }`}
                       >
-                        <span className="text-base">{l.flag === 'IK' ? (lang === 'EUS' ? <Ikurrina className="w-5 h-3 inline-block align-middle" /> : <span className="text-xs font-600">EUS</span>) : l.flag}</span>
+                        <span className="text-base">{l.flag === 'IK' ? <Ikurrina className="w-5 h-3 inline-block align-middle" /> : l.flag}</span>
                         <span className="flex-1 text-left">{l.label}</span>
                         {lang === l.code && <Check className="w-3.5 h-3.5 text-forest-500" />}
                       </button>

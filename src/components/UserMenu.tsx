@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  ChevronDown, Globe, Sun, Moon, Monitor, Ruler, Mail, Lock, Eye, EyeOff,
+  ChevronDown, Globe, Sun, Moon, Monitor, Mail, Lock, Eye, EyeOff,
   ToggleLeft, ToggleRight, HelpCircle, FileText, LogOut, X, Bookmark,
   Award, ChevronRight, Check,
 } from 'lucide-react';
@@ -20,7 +20,6 @@ export function UserMenu() {
   const [passwordOpen, setPasswordOpen] = useState(false);
   const [publicPassport, setPublicPassport] = useState(true);
   const [showExif, setShowExif] = useState(false);
-  const [units, setUnits] = useState<'metric' | 'imperial'>('metric');
   const [pw1, setPw1] = useState('');
   const [pw2, setPw2] = useState('');
   const [showPw, setShowPw] = useState(false);
@@ -177,7 +176,7 @@ export function UserMenu() {
             </div>
 
             {/* Theme mode */}
-            <div className="mb-3">
+            <div>
               <label className="text-xs font-600 text-forest-700/80 dark:text-sand-300/80 flex items-center gap-1.5 mb-1.5">
                 <Sun className="w-3.5 h-3.5" />
                 {t('visualMode')}
@@ -199,27 +198,6 @@ export function UserMenu() {
                     </button>
                   );
                 })}
-              </div>
-            </div>
-
-            {/* Units */}
-            <div>
-              <label className="text-xs font-600 text-forest-700/80 dark:text-sand-300/80 flex items-center gap-1.5 mb-1.5">
-                <Ruler className="w-3.5 h-3.5" />
-                {t('units')}
-              </label>
-              <div className="flex gap-1 p-0.5 rounded-lg bg-forest-50/50 dark:bg-slate2-900/60 border border-forest-100 dark:border-slate2-800">
-                {(['metric', 'imperial'] as const).map((u) => (
-                  <button
-                    key={u}
-                    onClick={() => setUnits(u)}
-                    className={`flex-1 px-2 py-1.5 rounded-md text-xs font-600 transition-all ${
-                      units === u ? 'bg-forest-600 text-white shadow-soft' : 'text-forest-700/60 dark:text-sand-300/60 hover:text-forest-800 dark:hover:text-sand-100'
-                    }`}
-                  >
-                    {u === 'metric' ? t('metric') : t('imperial')}
-                  </button>
-                ))}
               </div>
             </div>
           </div>

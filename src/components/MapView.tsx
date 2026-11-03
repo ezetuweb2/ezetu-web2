@@ -390,8 +390,8 @@ export function MapView({ refreshKey }: { refreshKey?: number }) {
               onMouseEnter={() => onCardHover(s.id)}
               onMouseLeave={() => onCardHover(null)}
               onClick={() => onCardClick(s)}
-              className={`group relative flex gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-850 border cursor-pointer transition-all ${
-                isActive ? 'border-forest-500 dark:border-forest-400 shadow-lift scale-[1.01]' : 'border-slate-200 dark:border-slate-800 hover:border-forest-300 dark:hover:border-slate2-700'
+              className={`group relative flex gap-3 p-3 rounded-2xl border cursor-pointer transition-all shadow-sm hover:shadow-md ${
+                isActive ? 'border-forest-500 dark:border-forest-400 shadow-lift scale-[1.01]' : 'border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-slate-800/95 hover:bg-slate-50 dark:hover:bg-slate-800'
               }`}
             >
               <div className={`absolute -top-2 -left-2 z-10 grid place-items-center w-7 h-7 rounded-full text-[11px] font-700 shadow-soft ring-2 ring-white dark:ring-slate-900 ${rankBadgeClass(rank)}`}>
@@ -410,16 +410,16 @@ export function MapView({ refreshKey }: { refreshKey?: number }) {
                   {eus && <Ikurrina className="w-3.5 h-2" />}
                   {s.protected_zone && <ShieldAlert className="w-3.5 h-3.5 text-amber-500" />}
                 </div>
-                <h3 className="font-600 text-sm text-forest-800 dark:text-sand-100 truncate mt-1">{eus ? basqueName(s.id, s.name) : s.name}</h3>
-                <p className="text-xs text-forest-700/60 dark:text-sand-300/60 truncate flex items-center gap-1">
+                <h3 className="font-semibold text-sm text-slate-900 dark:text-white truncate mt-1">{eus ? basqueName(s.id, s.name) : s.name}</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 truncate flex items-center gap-1">
                   <PlaceBreadcrumb spot={s} />
                 </p>
                 <div className="flex items-center gap-2 mt-1.5 text-[11px]">
-                  <span className="flex items-center gap-0.5 text-terracotta-600 dark:text-terracotta-300 font-700">
-                    <Star className="w-3.5 h-3.5 fill-terracotta-500 text-terracotta-500" />
+                  <span className="flex items-center gap-0.5 text-slate-900 dark:text-white font-700">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     {s.bayesian_rating.toFixed(1)}
                   </span>
-                  <span className="text-forest-700/40 dark:text-sand-300/40">· {s.ratings_count} {t('bayesian').toLowerCase()}</span>
+                  <span className="text-slate-600 dark:text-slate-400">· {s.ratings_count} {t('bayesian').toLowerCase()}</span>
                   {isVisited && <span className="flex items-center gap-0.5 text-forest-600 dark:text-forest-300 font-600"><Footprints className="w-3 h-3" /></span>}
                   {isSaved && <span className="text-terracotta-500"><Bookmark className="w-3 h-3 fill-terracotta-500" /></span>}
                 </div>
@@ -537,11 +537,11 @@ export function MapView({ refreshKey }: { refreshKey?: number }) {
                   <PlaceBreadcrumb spot={s} />
                 </p>
                 <div className="flex items-center gap-2 mt-1.5 text-[11px]">
-                  <span className="flex items-center gap-0.5 text-terracotta-600 dark:text-terracotta-300 font-700">
-                    <Star className="w-3.5 h-3.5 fill-terracotta-500 text-terracotta-500" />
+                  <span className="flex items-center gap-0.5 text-slate-900 dark:text-white font-700">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     {s.bayesian_rating.toFixed(1)}
                   </span>
-                  <span className="text-forest-700/40 dark:text-sand-300/40">· {s.ratings_count} {t('bayesian').toLowerCase()}</span>
+                  <span className="text-slate-600 dark:text-slate-400">· {s.ratings_count} {t('bayesian').toLowerCase()}</span>
                 </div>
               </div>
             </div>
@@ -564,7 +564,7 @@ export function MapView({ refreshKey }: { refreshKey?: number }) {
       {/* ===== Left panel: ranked list OR spot detail ===== */}
       {/* Desktop: always visible sidebar. Mobile: only when mobileView === 'list'. */}
       <div
-        className={`w-full md:w-[380px] lg:w-[440px] h-full shrink-0 overflow-y-auto border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 z-10 ${
+        className={`w-full md:w-[380px] lg:w-[440px] h-full shrink-0 overflow-y-auto border-r border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900 z-10 ${
           mobileView === 'list' ? 'block' : 'hidden md:block'
         }`}
       >

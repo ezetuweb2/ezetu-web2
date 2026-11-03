@@ -201,10 +201,7 @@ export function SpotDrawer({ spot, onClose, onVisitedChange, onWishlistChange, i
             }`}
           >
             <Bookmark className={`w-4 h-4 ${isSavedSpot ? 'fill-white' : ''}`} />
-            {isSavedSpot
-              ? (lang === 'EUS' ? 'Zerrendan gordeta' : 'Guardado en tu lista')
-              : t('saveList')}
-            {isSavedSpot && <span className="text-emerald-200">✓</span>}
+            {isSavedSpot ? t('saveListActive') : t('saveList')}
           </button>
         </div>
 

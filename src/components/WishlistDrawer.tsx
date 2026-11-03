@@ -39,7 +39,7 @@ export function WishlistDrawer({ onClose, onOpenSpot }: { onClose: () => void; o
         <div className="flex items-center justify-between p-5 border-b border-forest-100 dark:border-slate2-800 bg-white dark:bg-slate2-850">
           <h2 className="font-display text-xl font-700 text-forest-800 dark:text-sand-100 flex items-center gap-2">
             <Bookmark className="w-5 h-5 text-terracotta-500 fill-terracotta-500" />
-            {t('saved')} ({savedSpots.length})
+            {t('savedSpots')} ({savedSpots.length})
           </h2>
           <button
             onClick={onClose}
@@ -56,9 +56,7 @@ export function WishlistDrawer({ onClose, onOpenSpot }: { onClose: () => void; o
               <div>
                 <Bookmark className="w-12 h-12 text-forest-300 dark:text-slate2-700 mx-auto mb-3" />
                 <p className="text-sm text-forest-700/60 dark:text-sand-300/60 leading-relaxed">
-                  {lang === 'EUS'
-                    ? 'Ez duzu lekurik gorde oraindik. Esploratu eta sakatu "Gorde zerrendan" zure etorkizuneko bidaiak antolatzeko.'
-                    : 'Aún no tienes lugares guardados. Explora y pulsa "Guardar en mi lista" para planificar tus futuros viajes.'}
+                  {t('noSaved')}
                 </p>
               </div>
             </div>
